@@ -1,0 +1,75 @@
+{
+  "assets": {
+    "logo": "assets/oxymed-logo.png",
+    "doctorPhoto": "assets/doctor-photo.jpg",
+    "hospitalBuilding": "assets/hospital-building.jpg",
+    "ecgLine": "assets/ecg-line.png",
+    "valueIcons": {
+      "patientFirst": "assets/icon-patient-first.png",
+      "excellence": "assets/icon-excellence.png",
+      "researchDriven": "assets/icon-research-driven.png",
+      "communityFocused": "assets/icon-community-focused.png"
+    }
+  },
+  "links": {
+    "email": "dr.samaakber@gmail.com",
+    "instagram": "https://www.instagram.com/banghi.sama/",
+    "linkedin": "https://www.linkedin.com/in/dr-sama-akber-oxymedhospital/",
+    "x": "https://x.com/DrSamaakber",
+    "facebook": "https://www.facebook.com/sama.akber/",
+    "researchPublication": "#",
+    "linkedinArticles": "#"
+  },
+  "content": {
+    "sidebar": {
+      "name": "Dr. Sama Akber",
+      "subtitle": "DIRECTOR, OXYMED HOSPITAL",
+      "role": "PREVENTIVE & INTERVENTIONAL CARDIOLOGIST | RESEARCHER",
+      "bio": "Dedicated to advancing cardiovascular healthcare through clinical excellence, research, and education. Committed to evidence-based medicine and improving patient outcomes.",
+      "contactLabel": "Get in Touch",
+      "logoAlt": "Oxymed Hospital logo",
+      "photoAlt": "Dr. Sama Akber"
+    },
+    "hero": {
+      "name": "Dr. Sama Akber",
+      "title": "Director, Oxymed Hospital",
+      "role": "Preventive & Interventional Cardiologist"
+    },
+    "cards": {
+      "research": {
+        "title": "Research Publications",
+        "body": "Akber S, et al. Combined EECP and HBOT in Ischemic Cardiomyopathy. J Card Fail. 2026.",
+        "button": "View & Download"
+      },
+      "linkedin": {
+        "title": "LinkedIn Articles",
+        "body": "Read my latest articles and professional insights on LinkedIn.",
+        "button": "Visit LinkedIn"
+      }
+    },
+    "values": [
+      { "title": "Patient First",     "text": "Compassionate care is our priority." },
+      { "title": "Excellence",        "text": "Committed to clinical excellence." },
+      { "title": "Research Driven",   "text": "Advancing knowledge through research." },
+      { "title": "Community Focused", "text": "Building a healthier community together." }
+    ],
+    "footer": {
+      "tagline": "\"Excellence in Cardiac Care. Commitment to Life.\"",
+      "location": "Oxymed Hospital, Chennai, India"
+    },
+    "meta": {
+      "pageTitle": "Preventive & Interventional Cardiologist | Researcher",
+      "description": "Dr. Sama Akber — Director, Oxymed Hospital. Preventive & Interventional Cardiologist & Researcher."
+    }
+  },
+  "theme": {
+    "greenBg": "#16361c",
+    "greenCard": "#12301a",
+    "greenDark": "#143818",
+    "greenAccent": "#5fb84a",
+    "offwhite": "#f6f6f2",
+    "white": "#ffffff",
+    "textBody": "#2c2c2c",
+    "textMuted": "#5a5a5a"
+  }
+}

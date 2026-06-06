@@ -1,0 +1,380 @@
+/* ===========================================================
+   Dr. Sama Akber — Profile (1:1 replica)
+   Colors come from :root but are overridable by config.js
+   (theme.* in replacement.json) via CSS custom properties.
+   =========================================================== */
+
+:root {
+  --green-bg:        #16361c;  /* page background — deep forest green */
+  --green-card:      #12301a;  /* the two dark cards on the right */
+  --green-dark:      #143818;  /* dark green text on light surfaces */
+  --green-accent:    #5fb84a;  /* bright accent green */
+  --offwhite:        #f6f6f2;  /* left sidebar card background */
+  --white:           #ffffff;  /* white container wrapping the cards */
+  --text-body:       #2c2c2c;  /* body text on light surfaces */
+  --text-muted:      #5a5a5a;  /* small caps subtitles */
+  --btn-light:       #f3f3f3;  /* pill button face (top) */
+  --btn-light-2:     #d9d9d9;  /* pill button face (bottom) */
+  --card-radius:     22px;
+  --pill-radius:     999px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--green-bg);
+  color: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------- Page / layout ---------- */
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--green-bg);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: clamp(300px, 30%, 420px) 1fr;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ============ LEFT SIDEBAR ============ */
+.sidebar {
+  background: var(--offwhite);
+  border-radius: 0 38px 38px 0;
+  display: flex;
+  padding: clamp(24px, 2.5vw, 40px) clamp(20px, 2vw, 32px);
+}
+
+.sidebar-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.logo {
+  width: clamp(150px, 14vw, 200px);
+  height: auto;
+  margin-bottom: 6px;
+}
+
+.photo-ring {
+  width: clamp(150px, 16vw, 190px);
+  height: clamp(150px, 16vw, 190px);
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid var(--green-accent);
+  background: var(--offwhite);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.side-name {
+  margin: 6px 0 0;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.15;
+}
+
+.side-subtitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.divider {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #cfcfca;
+  margin: 4px 0 2px;
+}
+
+.side-role {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  line-height: 1.4;
+}
+
+.side-bio {
+  margin: 6px 0;
+  font-size: clamp(14px, 1.05vw, 16px);
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+/* Get in Touch */
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #d8d8d2;
+  border-radius: 12px;
+  padding: 14px;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.contact-box:hover,
+.contact-box:focus-visible {
+  border-color: var(--green-accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  outline: none;
+}
+.contact-icon { color: var(--green-accent); flex: 0 0 auto; display: flex; }
+.contact-text { display: flex; flex-direction: column; min-width: 0; }
+.contact-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: none;
+}
+.contact-email {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 700;
+  color: var(--green-dark);
+  word-break: break-all;
+}
+
+/* Socials */
+.socials {
+  display: flex;
+  gap: 18px;
+  align-self: flex-start;
+  margin-top: 6px;
+}
+.social {
+  color: var(--green-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform .2s, color .2s;
+}
+.social:hover,
+.social:focus-visible {
+  color: var(--green-accent);
+  transform: translateY(-2px) scale(1.08);
+  outline: none;
+}
+.social:focus-visible { box-shadow: 0 0 0 3px rgba(95,184,74,.4); }
+
+/* ============ RIGHT COLUMN ============ */
+.content {
+  position: relative;
+  padding: clamp(28px, 4vw, 64px) clamp(22px, 3.5vw, 56px);
+  overflow: hidden;
+}
+
+.content-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .15;
+  z-index: 0;
+}
+/* darken/blend overlay so text stays legible */
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(22,54,28,.86), rgba(22,54,28,.93));
+  z-index: 0;
+}
+
+.content-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 3.5vw, 48px);
+  height: 100%;
+}
+
+/* ---- Hero ---- */
+.hero { display: flex; flex-direction: column; gap: 6px; }
+.hero-name {
+  margin: 0;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--white);
+}
+.hero-title {
+  margin: 6px 0 0;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 500;
+  color: var(--green-accent);
+}
+.hero-role {
+  margin: 0;
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 400;
+  color: var(--green-accent);
+}
+.ecg {
+  width: clamp(240px, 40%, 420px);
+  height: auto;
+  margin-top: 10px;
+  align-self: center;
+}
+
+/* ---- White container + cards ---- */
+.cards-wrap {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  padding: clamp(16px, 1.4vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--green-card);
+  border-radius: var(--card-radius);
+  padding: clamp(20px, 2vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 26px);
+}
+.card-icon { flex: 0 0 auto; color: #fff; display: flex; }
+.card-text { flex: 1 1 auto; min-width: 0; }
+.card-title {
+  margin: 0 0 6px;
+  font-size: clamp(18px, 1.7vw, 22px);
+  font-weight: 700;
+  color: var(--white);
+}
+.card-body {
+  margin: 0;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.pill-btn {
+  flex: 0 0 auto;
+  border-radius: var(--pill-radius);
+  background: linear-gradient(180deg, var(--btn-light), var(--btn-light-2));
+  color: var(--green-dark);
+  font-weight: 700;
+  font-size: clamp(15px, 1.2vw, 17px);
+  text-decoration: underline;
+  padding: 14px 28px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  transition: transform .18s, box-shadow .18s, filter .18s;
+  white-space: nowrap;
+  text-align: center;
+}
+.pill-btn:hover,
+.pill-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.32);
+  filter: brightness(1.05);
+  outline: none;
+}
+.pill-btn:focus-visible { box-shadow: 0 0 0 3px rgba(95,184,74,.55); }
+
+/* ---- Values + footer ---- */
+.footer { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 34px); }
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 2vw, 30px);
+}
+.value { display: flex; align-items: flex-start; gap: 12px; }
+.value-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.value-title {
+  margin: 0 0 2px;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 700;
+  color: var(--green-accent);
+}
+.value-sub {
+  margin: 0;
+  font-size: clamp(12px, .95vw, 13px);
+  color: var(--white);
+  line-height: 1.4;
+}
+
+.tagline {
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(16px, 1.6vw, 22px);
+  color: var(--white);
+}
+.location {
+  margin: 0;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* ===========================================================
+   Responsive
+   =========================================================== */
+
+/* Tablet & below: single column */
+@media (max-width: 991px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-radius: 0 0 38px 38px; }
+  .values { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Small tablet / large phone: stack cards vertically */
+@media (max-width: 575px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .pill-btn { width: 100%; }
+  .values { grid-template-columns: 1fr; }
+  .location { text-align: center; }
+  .content-bg { opacity: .08; }
+  .socials { align-self: center; }
+}
